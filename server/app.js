@@ -15,6 +15,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', apiRouter);
 
+app.get('/404', function(req, res){
+  res.status(404).sendFile(path.join(__dirname + '/public/index.html'));
+})
+
 app.get('*', function(req, res){
   console.log('the original url is ' + req.url);
   res.status(200).sendFile(path.join(__dirname + '/public/index.html'));

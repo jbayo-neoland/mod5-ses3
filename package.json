@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "express-generator": "^4.16.1"
+  "dependencies": {},
+  "devDependencies": {
+    "express-generator": "^4.16.1",
+    "nodemon": "^2.0.7"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/bin/www",
+    "dev-server": "nodemon server/bin/www",
+    "build-angular": "cd app && ng build && cd ..",
+    "serve-angular": "cd app && ng serve"
   },
   "repository": {
     "type": "git",

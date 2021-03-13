@@ -1,4 +1,4 @@
-const movieModel = require('../models/movie');
+const movieModel = require('../models/movie.model');
 
 module.exports = {
   getMovieById: (async (req, res, next) => {

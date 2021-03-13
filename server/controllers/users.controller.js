@@ -1,4 +1,4 @@
-const userModel = require('../models/user');
+const userModel = require('../models/user.model');
 
 module.exports = {
   getUsers: (async (req, res, next) => {

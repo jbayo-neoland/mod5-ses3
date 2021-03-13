@@ -1,4 +1,4 @@
-const commentModel = require('../models/comment');
+const commentModel = require('../models/comment.model');
 
 module.exports = {
   getCommentById: (async (req, res, next) => {

@@ -29,7 +29,6 @@ const TomatoesSchema = new Schema({
 });
 
 var MovieSchema = new Schema({
-  "_id": {type: mongoose.Schema.Types.ObjectId, required: true},
   "title": {type: String, required: true},
   "year": {type: Number, required: true},
   "runtime": {type: Number, required: true},
@@ -42,11 +41,11 @@ var MovieSchema = new Schema({
   "type": {type: String, required: true},
   "directors": {type: [String]},
   "imdb": {
-    type: ImdbSchema
+    type: Object
   },
   "countries": {type: [String]},
   "languages": {type: [String]},
-  "cast": {type: [String]},
+  "cast": {type: [String], default: null},
   "genres": {type: [String]},
   "tomatoes": {
     type: TomatoesSchema

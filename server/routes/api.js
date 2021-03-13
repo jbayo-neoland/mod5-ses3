@@ -9,4 +9,11 @@ router.use('/comments', commentsRouter);
 router.use('/movies', moviesRouter);
 router.use('/users', usersRouter);
 
+router.use('*', (req, res, next)=>{
+  res.status(404).json({
+    error: 'Not found'
+  })
+});
+
+
 module.exports = router;

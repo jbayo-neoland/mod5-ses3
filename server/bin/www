@@ -26,7 +26,7 @@ var server = http.createServer(app);
 /**
  * Connect to the DB
  */
-mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost:27017/mflix', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const connection = mongoose.connection;
 connection.on('error', () => {

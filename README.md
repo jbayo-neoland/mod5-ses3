@@ -36,10 +36,11 @@ For production purposes we have these tools in our package.json:
 * angular build
 * node
 
-From the root of this project you can run in 2 different consoles:
-```
-npm start
-```
+From the root of this project must run first:
 ```
 npm run build-angular
+```
+And then
+```
+npm start
 ```

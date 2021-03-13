@@ -3,6 +3,7 @@ const router = express.Router();
 
 const commentsController = require('../controllers/comments');
 const usersController = require('../controllers/users');
+const moviesController = require('../controllers/movies');
 
 /* GET comments listing. */
 router.get('/comments', function(req, res, next) {
@@ -19,5 +20,7 @@ router.get('/users', usersController.getUsers);
 router.get('/movies', function(req, res, next) {
   res.json({list: [{id: 1, name: 'Kill Bill'}, {id: 2, name: 'Pulp Fiction'}]})
 });
+
+router.get('/movies/:id', moviesController.getMovieById);
 
 module.exports = router;

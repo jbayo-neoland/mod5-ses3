@@ -1,5 +1,7 @@
 const userModel = require('../models/user.model');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
 
 module.exports = {
   login: (async (req, res, next) => {
@@ -7,7 +9,9 @@ module.exports = {
     console.log(req.body);
     if (user) {
       if (bcrypt.compareSync(req.body.password, user.password)){
-        res.json();
+        // TODO generate Token
+        let token = jwt.sign({name: user.name, email: user.email}, process.env.JWT_KEY);
+        return res.json({token: token });
       }
       res.status(400).json({error: 'Password invalid'});
     } else {

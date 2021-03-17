@@ -6,6 +6,9 @@ const commentsRouter = require('./comments.router');
 const moviesRouter = require('./movies.router');
 const usersRouter = require('./users.router');
 
+const routeNeedsAuthMiddleware = require('../middlewares/routeNeedsAuth');
+router.use(routeNeedsAuthMiddleware);
+
 router.use('/auth', authRouter);
 router.use('/comments', commentsRouter);
 router.use('/movies', moviesRouter);

@@ -6,7 +6,6 @@ const jwt = require('jsonwebtoken');
 module.exports = {
   login: (async (req, res, next) => {
     let user = await userModel.findOne({email: req.body.email});
-    console.log(req.body);
     if (user) {
       if (bcrypt.compareSync(req.body.password, user.password)){
         // TODO generate Token

@@ -16,11 +16,11 @@ module.exports = function(req, res, next) {
       // valid => decode the user data and pass it to the next
       if (decodedToken) {
         req.decodedToken = decodedToken;
-        console.log(req.decodedToken);
         next();
       }
     } catch(e) {
       // not valid => res with error
+      console.log('token not valid', e);
       res.status(400).json({error: 'Token invalid'})
     }
   } else {

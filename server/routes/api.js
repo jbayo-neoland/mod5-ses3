@@ -7,7 +7,12 @@ const moviesRouter = require('./movies.router');
 const usersRouter = require('./users.router');
 
 const routeNeedsAuthMiddleware = require('../middlewares/routeNeedsAuth');
+const tokenIsValidMiddleware = require('../middlewares/tokenIsValid');
+const tokenBelongsToUserMiddleware = require('../middlewares/tokenBelongsToUser');
+
 router.use(routeNeedsAuthMiddleware);
+router.use(tokenIsValidMiddleware);
+router.use(tokenBelongsToUserMiddleware);
 
 router.use('/auth', authRouter);
 router.use('/comments', commentsRouter);

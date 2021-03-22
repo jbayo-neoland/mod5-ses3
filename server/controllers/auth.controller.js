@@ -8,7 +8,7 @@ module.exports = {
     let user = await userModel.findOne({email: req.body.email});
     if (user) {
       if (bcrypt.compareSync(req.body.password, user.password)){
-        // TODO generate Token
+        // generate Token
         let token = jwt.sign({_id: user._id, name: user.name, email: user.email}, process.env.JWT_KEY);
         return res.json({token: token });
       }

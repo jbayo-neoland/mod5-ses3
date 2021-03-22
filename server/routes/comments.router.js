@@ -4,10 +4,10 @@ const router = express.Router();
 const commentsController = require('../controllers/comments.controller');
 
 /* GET comments listing. */
-router.get('/comments', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.json({comments: [{id: 1, name: 'me'}]})
 });
 
-router.get('/comments/:id', commentsController.getCommentById);
+router.get('/:id', commentsController.getCommentById);
 
 module.exports = router;

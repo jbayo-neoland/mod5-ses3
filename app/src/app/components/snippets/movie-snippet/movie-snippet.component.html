@@ -1,0 +1,10 @@
+<mat-card class="movie-card">
+  <mat-card-header>
+    <mat-card-title>{{movie.title}}</mat-card-title>
+    <mat-card-subtitle>{{movie.year}}</mat-card-subtitle>
+  </mat-card-header>
+  <img class="movie-poster" mat-card-image *ngIf="movie.poster" [src]="movie.poster" alt="Photo of {{movie.title}}">
+  <mat-card-content>
+    <p>{{movie.plot}}</p>
+  </mat-card-content>
+</mat-card>

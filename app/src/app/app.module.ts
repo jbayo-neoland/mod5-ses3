@@ -13,11 +13,13 @@ import { TokenInterceptor } from './services/token-interceptor.service';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/views/login/login.component';
+import { ShowComponent } from './components/views/show/show.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ShowComponent
   ],
   imports: [
     BrowserModule,

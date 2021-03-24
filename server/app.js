@@ -32,6 +32,15 @@ app.get('*', function(req, res){
   res.status(200).sendFile(path.join(__dirname + '/public/index.html'));
 })
 
+app.use(function(err, req, res, next){
+  if (res.headersSent) {
+    return next(err)
+  }
+  const status = err.status || 500;
+  res.status(status);
+  res.json({ error: err.message });
+})
+
 
 // CUSTOM MIDDLEWARES
 app.use(function(req, res, next) {

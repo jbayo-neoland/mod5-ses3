@@ -21,7 +21,10 @@ module.exports = function(req, res, next) {
     } catch(e) {
       // not valid => res with error
       console.log('token not valid', e);
-      res.status(400).json({error: 'Token invalid'})
+      const err = new Error('token not valid');
+      err.status = 401;
+      return next(err);
+      // res.status(400).json({error: 'Token invalid'})
     }
   } else {
 

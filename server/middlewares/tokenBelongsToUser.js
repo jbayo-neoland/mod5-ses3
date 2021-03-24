@@ -14,7 +14,9 @@ module.exports = async function(req, res, next) {
     } else {
       // else
       // respond with an error
-      res.status(403).json({error: 'Forbidden'});
+      const err = new Error('Forbidden');
+      err.status = 403;
+      return next(err);
     }
   } else {
     next();

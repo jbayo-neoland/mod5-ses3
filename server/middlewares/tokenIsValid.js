@@ -6,8 +6,9 @@ module.exports = function(req, res, next) {
     // get the token from the header
     const authHeader = req.headers['authorization'];
     if (!authHeader) {
-      res.status(401).json({error: 'Unauthorized'});
-      return;
+      const err = new Error('Unauthorized');
+      err.status = 401;
+      return next(err);
     }
     const token = authHeader.split('').slice(7).join('').trim();
     // check if the token is (jwt.)

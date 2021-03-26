@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './components/views/page-not-found/page-not-found.component';
 import { LoginComponent } from './components/views/login/login.component';
 
+
 const routes: Routes = [
   //{ path: '', pathMatch: 'full', component: }
   { path: '', pathMatch: 'full', redirectTo: '/login' },

@@ -1,25 +1,24 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
-
   BASE_URI = 'http://localhost:3000/api';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  login(payload:any): Observable<any>{
+  login(payload: any): Observable<any> {
     return this.http.post(`${this.BASE_URI}/auth/login`, payload);
   }
 
-  getAllMovies(){
+  getAllMovies() {
     return this.http.get(`${this.BASE_URI}/movies`);
   }
   getOneMovie(id: any) {
-    return this.http.get(`${this.BASE_URI}/details/movies/${id}`);
+    return this.http.get(`${this.BASE_URI}/movies/${id}`);
   }
 }

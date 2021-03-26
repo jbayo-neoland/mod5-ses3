@@ -1,4 +1,7 @@
 <h2>Movies</h2>
+<div class="filters">
+  <app-movies-country-filter (filteredCountry)="getMoviesByCountry($event)"></app-movies-country-filter>
+</div>
 <div class="wrapper" *ngIf="movies">
   <mat-grid-list cols="2">
     <mat-grid-tile *ngFor="let movie of movies">

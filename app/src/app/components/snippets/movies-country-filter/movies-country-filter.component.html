@@ -1,0 +1,14 @@
+<div class="filters">
+  <mat-icon aria-hidden="false" aria-label="Example home icon" class="filter-icon">filter_list</mat-icon>
+  <mat-form-field appearance="fill">
+    <mat-label>
+Countries</mat-label>
+    <mat-select (selectionChange)="emitFilterChange()" [(value)]="selectedCountry">
+      <mat-option *ngFor="let country of countriesList" [value]="country">{{country}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+<mat-chip-list aria-label="" *ngIf="selectedCountry">
+  <mat-chip (removed)="remove()">{{selectedCountry}}  <mat-icon matChipRemove >cancel</mat-icon></mat-chip>
+</mat-chip-list>
+
+</div>

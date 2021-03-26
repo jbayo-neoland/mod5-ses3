@@ -19,7 +19,7 @@ router.use("/auth", authRouter);
 router.use("/comments", commentsRouter);
 router.use("/movies", moviesRouter);
 router.use("/users", usersRouter);
-router.use("/details/movies", moviesDetailsRouter);
+router.use("/movies/:id", moviesDetailsRouter);
 
 router.use("*", (req, res, next) => {
   res.status(404).json({

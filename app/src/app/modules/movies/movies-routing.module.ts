@@ -5,7 +5,7 @@ import { OneMovieResolverService } from 'src/app/services/one-movie-resolver.ser
 import { MoviesComponent } from '../../components/views/movies/movies.component';
 import { MoviesResolver } from '../../services/movies.resolver';
 
-import { ShowComponent } from './components/views/login/show.component';
+import { ShowComponent } from '../../components/views/show/show.component';
 
 
 const routes: Routes = [

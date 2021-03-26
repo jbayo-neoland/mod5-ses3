@@ -14,7 +14,15 @@ module.exports = {
     let limit = req.query.limit ? parseInt(req.query.limit) : 10;
     let offset = req.query.offset ? parseInt(req.query.offset) : 0;
 
-    let movies = await movieModel.find().limit(limit).skip(offset);
-    res.json({movies: movies});
+    let country = req.query.country ? req.query.country : undefined;
+    let query = {}
+    if (country != undefined) {
+      query = {"countries": country} ;
+    }
+    let movies = await movieModel.find(query).limit(limit).skip(offset);
+    res.json({
+      movies: movies
+    });
   })
+
 }

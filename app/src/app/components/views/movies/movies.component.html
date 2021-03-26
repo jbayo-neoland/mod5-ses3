@@ -5,8 +5,9 @@
 <div class="wrapper" *ngIf="movies">
   <mat-grid-list cols="2">
     <mat-grid-tile *ngFor="let movie of movies">
-      <app-movie-snippet [movie]="movie"></app-movie-snippet>
+      <a [routerLink]="'/movies/' + movie._id"
+        ><app-movie-snippet [movie]="movie"></app-movie-snippet
+      ></a>
     </mat-grid-tile>
   </mat-grid-list>
-
 </div>

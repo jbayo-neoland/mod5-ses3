@@ -19,9 +19,11 @@ export class ApiService {
   getAllMovies(){
     return this.http.get(`${this.BASE_URI}/movies`);
   }
+
   getMoviesByCountry(country:string): Observable<any>{
     let params = new HttpParams()
     .set('country', country)
     return this.http.get(`${this.BASE_URI}/movies`,{params:params});
   }
+
 }

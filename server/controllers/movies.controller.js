@@ -13,6 +13,7 @@ module.exports = {
   getMovies: (async (req, res, next) => {
     let limit = req.query.limit ? parseInt(req.query.limit) : 10;
     let offset = req.query.offset ? parseInt(req.query.offset) : 0;
+
     let country = req.query.country ? req.query.country : undefined;
     let query = {}
     if (country != undefined) {
@@ -23,4 +24,5 @@ module.exports = {
       movies: movies
     });
   })
+
 }

@@ -1,0 +1,25 @@
+:host{
+  width: 100%;
+
+}
+.filters{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100% ;
+  padding: 6px 16px;
+  background-color: rgba(251, 251, 250,0.3);
+  .filter-icon{
+    margin-right: 16px;
+  }
+  mat-form-field{
+    margin-right: 16px;
+  
+  }
+
+}
+
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex{
+  background: transparent ;
+}

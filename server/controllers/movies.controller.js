@@ -14,25 +14,15 @@ module.exports = {
     let limit = req.query.limit ? parseInt(req.query.limit) : 10;
     let offset = req.query.offset ? parseInt(req.query.offset) : 0;
 
-    let movies = await movieModel.find().limit(limit).skip(offset);
-    res.json({movies: movies});
-  }) 
-
- /*  getMovies: (async (req, res, next) => {
-    let limit = req.query.limit ? parseInt(req.query.limit) : 10;
-    let offset = req.query.offset ? parseInt(req.query.offset) : 0;
-    let country = req.query.country ? parseInt(req.query.country) : undefined;
+    let country = req.query.country ? req.query.country : undefined;
+    let query = {}
     if (country != undefined) {
-      let movies = await movieModel.find({
-        "countries": country
-      }).limit(limit).skip(offset);
-
-    } else {
-      let movies = await movieModel.find().limit(limit).skip(offset);
+      query = {"countries": country} ;
     }
+    let movies = await movieModel.find(query).limit(limit).skip(offset);
     res.json({
       movies: movies
     });
-  }) */
+  })
 
 }

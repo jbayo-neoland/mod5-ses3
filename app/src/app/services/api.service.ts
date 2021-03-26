@@ -25,5 +25,5 @@ export class ApiService {
     .set('country', country)
     return this.http.get(`${this.BASE_URI}/movies`,{params:params});
   }
-  
+
 }
